@@ -36,9 +36,24 @@ Python의 turtle 라이브러리를 이용하여 구현
 
 거북이와 공의 충돌을 체크하기 위하여 거북이의 위치와 공 사이의 거리를 계산하는 함수를 구현
 
-거북이와 공 중심 사이의 거리가 임계치보다 작다면 충돌로 판정
-
 <code>
   def distance(x1, y1, x2, y2):
     return ((x2-x1)**2+(y2-y1)**2)**0.5
+</code>
+
+거북이와 공 중심 사이의 거리가 임계치보다 작다면 충돌로 판정
+충돌로 판정 시 진행방향(dx, dy)에 -1을 곱하여 반대 방향으로 이동하도록 함
+
+<code>
+      ball2_x=ball_list[j][0]
+      ball2_y=ball_list[j][1]
+      if(distance(ball_x, ball_y, ball2_x, ball2_y)<=ball_size):
+          ball_list[i][4] *= -1
+          ball_list[i][5] *= -1
+          ball_list[j][4] *= -1
+          ball_list[j][5] *= -1
+          ball_list[i][0] += ball_list[i][4]*2
+          ball_list[i][1] += ball_list[i][5]*2
+          ball_list[j][0] += ball_list[j][4]*2
+          ball_list[j][1] += ball_list[j][5]*2
 </code>
