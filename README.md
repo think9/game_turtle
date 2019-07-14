@@ -46,7 +46,6 @@ Python의 turtle 라이브러리를 이용하여 구현
 충돌로 판정 시 진행방향(dx, dy)에 -1을 곱하여 반대 방향으로 이동하도록 함
 
 <code>
-  #충돌판정
   
         ball2_x=ball_list[j][0]
         ball2_y=ball_list[j][1]
@@ -58,5 +57,4 @@ Python의 turtle 라이브러리를 이용하여 구현
             ball_list[i][0] += ball_list[i][4]*2
             ball_list[i][1] += ball_list[i][5]*2
             ball_list[j][0] += ball_list[j][4]*2
-            ball_list[j][1] += ball_list[j][5]*2
-</code>
+            ball_list[j][1] += ball_list[j][5]*2</code>
