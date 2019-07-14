@@ -58,5 +58,5 @@ if(distance(ball_x, ball_y, ball2_x, ball2_y)<=ball_size):
     ball_list[i][0] += ball_list[i][4]*2
     ball_list[i][1] += ball_list[i][5]*2
     ball_list[j][0] += ball_list[j][4]*2
-    ball_list[j][1] += ball_list[j][5]*2</code>
+    ball_list[j][1] += ball_list[j][5]*2
 ```
