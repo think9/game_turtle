@@ -18,19 +18,18 @@ Python의 turtle 라이브러리를 이용하여 구현
 
 공의 색상 또한 랜덤하게 결정
 
-<code>
-  def make_ball(size):
-  
-    x = random.randint(-200, max_x)
-    y = random.randint(min_y, 200)
-    color = random.choice(["red", "green", "blue", "yellow", "pink", "purple"])
-    while True:
-        dx = random.randint(-1, 1)  # 이동벡터
-        dy = random.randint(-1, 1)  # 이동벡터
-        if dx != 0 or dy != 0:
-            break
-    return [x, y, size, color, dx, dy]
-</code>
+```python
+def make_ball(size):
+  x = random.randint(-200, max_x)
+  y = random.randint(min_y, 200)
+  color = random.choice(["red", "green", "blue", "yellow", "pink", "purple"])
+  while True:
+      dx = random.randint(-1, 1)  # 이동벡터
+      dy = random.randint(-1, 1)  # 이동벡터
+      if dx != 0 or dy != 0:
+          break
+  return [x, y, size, color, dx, dy]
+```
 
 <h3>#2. 거북이와 공의 충돌 구현</h3>
 
@@ -38,25 +37,26 @@ Python의 turtle 라이브러리를 이용하여 구현
 
 거북이와 공의 충돌을 체크하기 위하여 거북이의 위치와 공 사이의 거리를 계산하는 함수를 구현
 
-<code>
-  def distance(x1, y1, x2, y2):
-    return ((x2-x1)**2+(y2-y1)**2)**0.5
-</code>
+```python
+def distance(x1, y1, x2, y2):
+  return ((x2-x1)**2+(y2-y1)**2)**0.5
+```
 
 거북이와 공 중심 사이의 거리가 임계치보다 작다면 충돌로 판정
 
 충돌로 판정 시 진행방향(dx, dy)에 -1을 곱하여 반대 방향으로 이동하도록 함
 
-<code>
-  
-        ball2_x=ball_list[j][0]
-        ball2_y=ball_list[j][1]
-        if(distance(ball_x, ball_y, ball2_x, ball2_y)<=ball_size):
-            ball_list[i][4] *= -1
-            ball_list[i][5] *= -1
-            ball_list[j][4] *= -1
-            ball_list[j][5] *= -1
-            ball_list[i][0] += ball_list[i][4]*2
-            ball_list[i][1] += ball_list[i][5]*2
-            ball_list[j][0] += ball_list[j][4]*2
-            ball_list[j][1] += ball_list[j][5]*2</code>
+```python
+#if crush occured
+ball2_x=ball_list[j][0]
+ball2_y=ball_list[j][1]
+if(distance(ball_x, ball_y, ball2_x, ball2_y)<=ball_size):
+    ball_list[i][4] *= -1
+    ball_list[i][5] *= -1
+    ball_list[j][4] *= -1
+    ball_list[j][5] *= -1
+    ball_list[i][0] += ball_list[i][4]*2
+    ball_list[i][1] += ball_list[i][5]*2
+    ball_list[j][0] += ball_list[j][4]*2
+    ball_list[j][1] += ball_list[j][5]*2</code>
+```
